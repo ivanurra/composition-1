@@ -5,6 +5,9 @@
     >Countdown: {{contador}}</h1>
     <button @click="aumentar">+</button>
     <button @click="disminuir">-</button>
+    <hr>
+    <input type="text" v-model="texto">
+    <p>{{texto}}</p>
   </div>
 </template>
 
@@ -29,7 +32,9 @@ export default {
       }
     })
 
-    return {contador, aumentar, disminuir, color}
+    const texto = ref('');
+
+    return {contador, aumentar, disminuir, color, texto}
   },
 }
 </script>
