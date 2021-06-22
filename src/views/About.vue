@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <Titulo :contador="contador" />
+    <Titulo :contador="contador" :color="color" />
     <h1
     :style="{'color': color}"
     >Countdown: {{contador}}</h1>
@@ -38,7 +38,7 @@ export default {
         return 'blue'
       }
     })
-    
+
     return {contador, aumentar, disminuir, color, texto}
   },
 }
