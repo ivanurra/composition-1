@@ -22,6 +22,7 @@ export default {
   },
   setup() {
     const contador = ref(0);
+    const texto = ref('');
 
     const aumentar = () => {
       contador.value ++
@@ -37,9 +38,7 @@ export default {
         return 'blue'
       }
     })
-
-    const texto = ref('');
-
+    
     return {contador, aumentar, disminuir, color, texto}
   },
 }
