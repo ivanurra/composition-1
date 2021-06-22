@@ -1,5 +1,6 @@
 <template>
   <div class="about">
+    <Titulo :contador="contador" />
     <h1
     :style="{'color': color}"
     >Countdown: {{contador}}</h1>
@@ -13,7 +14,12 @@
 
 <script>
 import { ref, computed } from '@vue/reactivity'
+import Titulo from '../components/Titulo.vue'
+
 export default {
+  components: {
+    Titulo,
+  },
   setup() {
     const contador = ref(0);
 
