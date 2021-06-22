@@ -1,6 +1,10 @@
 <template>
   <div class="home">
-    <h2>Contador: {{contador}}</h2>
+    <h2
+    :style="{'color': color}"
+    >
+      Contador: {{contador}}
+    </h2>
     <button @click="aumentar">+</button>
     <button @click="disminuir">-</button>
   </div>
@@ -11,6 +15,15 @@ export default {
   data() {
     return {
       contador: 0
+    }
+  },
+  computed:{
+    color(){
+      if(this.contador < 0){
+        return 'red'
+      } else {
+        return 'blue'
+      }
     }
   },
   methods: {

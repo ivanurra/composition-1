@@ -1,13 +1,15 @@
 <template>
   <div class="about">
-    <h1>Countdown: {{contador}}</h1>
+    <h1
+    :style="{'color': color}"
+    >Countdown: {{contador}}</h1>
     <button @click="aumentar">+</button>
     <button @click="disminuir">-</button>
   </div>
 </template>
 
 <script>
-import { ref } from '@vue/reactivity'
+import { ref, computed } from '@vue/reactivity'
 export default {
   setup() {
     const contador = ref(0);
@@ -18,7 +20,16 @@ export default {
     const disminuir = () => {
       contador.value --
     }
-    return {contador, aumentar, disminuir}
+    
+    const color = computed(() => {
+      if(contador.value < 0){
+        return 'red'
+      } else {
+        return 'blue'
+      }
+    })
+
+    return {contador, aumentar, disminuir, color}
   },
 }
 </script>
