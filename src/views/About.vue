@@ -1,11 +1,13 @@
 <template>
   <div class="about">
     <Titulo :contador="contador" :color="color" />
-    <h1
+    <!-- <h1
     :style="{'color': color}"
     >Countdown: {{contador}}</h1>
     <button @click="aumentar">+</button>
-    <button @click="disminuir">-</button>
+    <button @click="disminuir">-</button> -->
+    <Btn :textoBoton="'Aumentar'" @accion="aumentar" />
+    <Btn :textoBoton="'Disminuir'" @accion="disminuir" />
     <hr>
     <input type="text" v-model="texto">
     <p>{{texto}}</p>
@@ -15,10 +17,12 @@
 <script>
 import { ref, computed } from '@vue/reactivity'
 import Titulo from '../components/Titulo.vue'
+import Btn from '../components/Btn.vue'
 
 export default {
   components: {
     Titulo,
+    Btn
   },
   setup() {
     const contador = ref(0);
