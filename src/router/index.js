@@ -21,6 +21,12 @@ const routes = [
     path: '/paises',
     name: 'Paises',
     component: () => import('../views/Paises.vue')
+  },
+  {
+    path: '/paises/:nombre',
+    name: 'Pais',
+    props: true,
+    component: () => import('../views/Pais.vue')
   }
 ]
 
