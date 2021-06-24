@@ -10,23 +10,23 @@ const routes = [
   {
     path: '/about',
     name: 'About',
-    component: () => import('../views/About.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
     path: '/contador',
     name: 'Contador',
-    component: () => import('../views/Contador.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/Contador.vue')
   },
   {
     path: '/paises',
     name: 'Paises',
-    component: () => import('../views/Paises.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/Paises.vue')
   },
   {
     path: '/paises/:nombre',
     name: 'Pais',
     props: true,
-    component: () => import('../views/Pais.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/Pais.vue')
   }
 ]
 

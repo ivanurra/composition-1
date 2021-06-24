@@ -1,18 +1,19 @@
 <template>
-  <h1>Contador: {{contador}}</h1>
+  <h1>contador: {{contador}}</h1>
   <Btn :textoBoton="'Aumentar'" @accion="aumentar" />
   <Btn :textoBoton="'Disminuir'" @accion="disminuir" />
 </template>
 
 <script>
+import Btn from '../components/Btn'
 import {useContador} from '../hooks/useContador'
-import Btn from '../components/Btn.vue'
-
 export default {
     components: {
-    Btn
+        Btn
     },
     setup(){
+        // const {contador, aumentar, disminuir} = useContador()
+        // return {contador, aumentar, disminuir}
         return {...useContador()}
     }
 }

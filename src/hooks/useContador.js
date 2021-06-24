@@ -1,13 +1,13 @@
-import { ref } from '@vue/reactivity'
-
+import { ref } from 'vue';
 export function useContador() {
     const contador = ref(0);
 
     const aumentar = () => {
-      contador.value ++
+        contador.value ++
     }
+
     const disminuir = () => {
-      contador.value --
+        contador.value --
     }
 
     return {contador, aumentar, disminuir}

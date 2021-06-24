@@ -1,6 +1,6 @@
 <template>
-  <!-- <button @click="$emit('accion')">{{textoBoton}}</button> -->
-  <button @click="accionHijo">{{textoBoton}}</button>
+    <!-- <button @click="$emit('accion')">{{textoBoton}}</button> -->
+    <button @click="accionHijo">{{textoBoton}}</button>
 </template>
 
 <script>

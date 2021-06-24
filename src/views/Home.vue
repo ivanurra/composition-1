@@ -1,37 +1,38 @@
 <template>
   <div class="home">
-    <h2
-    :style="{'color': color}"
+    <h1
+      :style="{'color': color}"
     >
       Contador: {{contador}}
-    </h2>
+    </h1>
     <button @click="aumentar">+</button>
     <button @click="disminuir">-</button>
   </div>
 </template>
 
 <script>
+
 export default {
   data() {
     return {
       contador: 0
     }
   },
-  computed:{
+  computed: {
     color(){
       if(this.contador < 0){
         return 'red'
-      } else {
+      }else {
         return 'blue'
       }
     }
   },
   methods: {
     aumentar(){
-      this.contador++
+      this.contador ++
     },
     disminuir(){
-      this.contador--
+      this.contador --
     }
   }
 }

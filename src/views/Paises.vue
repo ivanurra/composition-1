@@ -1,31 +1,17 @@
 <template>
-  <h1>Lista de países:</h1>
-    <p
-    v-for="(pais, index) in arrayData" :key="index"
-    >
-    <router-link :to="`/paises/:${pais.name}`">
-        {{pais.name}}
-    </router-link>
-    </p>
+  <h1>Lista de Paises</h1>
+  <p v-for="(pais, index) in arrayData" :key="index">
+      <router-link :to="`/paises/${pais.name}`">
+          {{pais.name}}
+      </router-link>
+  </p>
 </template>
 
 <script>
-import { ref } from '@vue/reactivity'
+import {useFetch} from '../hooks/useFetch'
 export default {
     setup(){
-        const arrayData = ref([])
-
-        const fetchData = async() => {
-            try {
-                const res = await fetch('https://restcountries.eu/rest/v2/all')
-                arrayData.value = await res.json()
-            } catch (error) {
-                console.log(error)
-            }
-        }
-        fetchData()
-
-        return {arrayData}
+        return {...useFetch('api.json')}
     }
 }
 </script>

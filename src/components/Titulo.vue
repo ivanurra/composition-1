@@ -1,24 +1,24 @@
 <template>
-<h2
-:style="{'color': color}"
->Contador: {{signoDolar}}</h2>
+    <h1
+        :style="{'color': color}"
+    >Contador: {{signoPeso}}</h1>
 </template>
 
 <script>
-import { computed } from '@vue/runtime-core'
+import { computed } from 'vue'
 export default {
     props: ['contador', 'color'],
+    setup(props){
+        console.log(props.contador)
+        const signoPeso = computed(() => {
+            return '$' + props.contador
+        })
+        return {signoPeso}
+    }
     // computed: {
-    //     signoDolar(){
+    //     signoPeso(){
     //         return '$' + this.contador
     //     }
     // }
-    setup(props){
-        const signoDolar = computed(() => {
-            return '$' + props.contador
-        })
-
-        return {signoDolar}
-    }
 }
 </script>
